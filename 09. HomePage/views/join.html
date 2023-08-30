@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<!-- Banner -->
+<!-- Note: The "styleN" class below should match that of the header element. -->
+<section id="banner" class="style2">
+   <div class="inner">
+      <span class="image">
+         <img src="images/pic07.jpg" alt="" />
+      </span>
+      <header class="major">
+         <h1>회원가입</h1>
+      </header>
+
+   </div>
+</section>
+
+
+<!-- Contact -->
+<section id="banner">
+   <div class="inner">
+      <form method="post" action="../user/join">
+         <div class="fields">
+            <div class="field half">
+               <label for="id">ID</label>
+               <input type="text" name="id" id="id" required/>
+            </div>
+            <div class="field half">
+               <label for="name">이름</label>
+               <input type="text" name="name" id="name" required/>
+            </div>
+            <div class="field half">
+               <label for="name">비밀번호</label>
+               <input type="password" name="pw" id="password" required />
+            </div>
+            <div class="field half">
+               <label for="name">비밀번호 확인</label>
+               <input type="password" name="pw2" id="password2" required  />
+            </div>
+            <div class="field ">
+               <label for="name">주소</label>
+               <input type="text" name="address" id="address" required />
+            </div>
+
+
+         </div>
+         <ul class="actions">
+            <li><input type="submit" value="Join US" class="primary" /></li>
+            <li><input type="reset" value="Clear" /></li>
+         </ul>
+      </form>
+   </div>
+</section>
+
+
+
+</div>
+{% endblock %}

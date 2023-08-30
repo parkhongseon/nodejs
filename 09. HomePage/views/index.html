@@ -1,0 +1,55 @@
+{% extends 'layout.html'%}{% block content %}{% include 'banner.html' %}<!-- Main -->
+<div id="main"> <!-- One -->
+    <section id="one" class="tiles">
+        <article> <span class="image"> <img src="images/pic01.jpg" alt="" /> </span>
+            <header class="major">
+                <h3><a href="/" class="link">HTML</a></h3>
+                <p>웹사이트의 모습을 기술하기 위한 마크업 언어</p>
+            </header>
+        </article>
+        <article> <span class="image"> <img src="images/pic02.jpg" alt="" /> </span>
+            <header class="major">
+                <h3><a href="/" class="link">CSS</a></h3>
+                <p>HTML 등의 마크업 언어로 작성된 문서가 실제로 웹사이트에 표현되는 방법을 정해주는 스타일 시트 언어</p>
+            </header>
+        </article>
+        <article> <span class="image"> <img src="images/pic03.jpg" alt="" /> </span>
+            <header class="major">
+                <h3><a href="/" class="link">JS</a></h3>
+                <p>Ecma International의 프로토타입 기반의 프로그래밍 언어로 클라이언트 단에서 웹 페이지가 동작하는 것을 담당 </p>
+            </header>
+        </article>
+        <article> <span class="image"> <img src="images/pic04.jpg" alt="" /> </span>
+            <header class="major">
+                <h3><a href="/" class="link">React</a></h3>
+                <p>메타에서 개발한 오픈 소스 자바스크립트 라이브러리.</p>
+            </header>
+        </article>
+        <article> <span class="image"> <img src="images/pic05.jpg" alt="" /> </span>
+            <header class="major">
+                <h3><a href="/" class="link">Node.js</a></h3>
+                <p>JavaScript로 브라우저 밖에서 서버를 구축하는 등의 코드를 실행할 수 있게 해주는 런타임 환경</p>
+            </header>
+        </article>
+        <article> <span class="image"> <img src="images/pic06.jpg" alt="" /> </span>
+            <header class="major">
+                <h3><a href="/" class="link">typescript</a></h3>
+                <p>마이크로소프트에서 구현한 JavaScript의 슈퍼셋(Superset) 프로그래밍 언어</p>
+            </header>
+        </article>
+    </section>
+</div><!-- Contact -->
+
+{%if obj != underfined%}
+    {%include 'mypage.html'%}
+{%else%}
+<section id="contact">
+    <div class="inner">
+        <h1>로그인이 필요한 서비스입니다.</h1>
+    </div>
+</section>
+{%endif%}
+
+</div>
+</section>
+{% endblock %}

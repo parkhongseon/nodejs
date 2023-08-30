@@ -1,0 +1,24 @@
+<!— Banner —>
+<section id="banner" class="major">
+    <div class="inner">
+
+        <!--조건이 필요함
+        로그인을 했다면? obj가 존재
+        로그인을 했다면? obj는 undefined일 것-->
+        <header class="major">
+
+            {% if obj != underfined %}
+            <h1>Hi, my name is {{obj.u_name}}</h1>
+            {%else%}
+            <h1>로그인을 해주세요!</h1>
+            {%endif%}
+        </header>
+        <div class="content">
+            <p>즐거운 Node를 배워보아요
+            </p>
+            <ul class="actions">
+                <li><a href="#one" class="button next scrolly">Get Started</a></li>
+            </ul>
+        </div>
+    </div>
+</section>

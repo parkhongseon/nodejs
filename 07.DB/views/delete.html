@@ -1,0 +1,10 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+<h3>회원 탈퇴</h3>
+<form method="post" action="/user/delete">
+    <input type="text" name="id" placeholder="탈퇴할 ID를 입력하시오">
+    <input type="password" name="pw" placeholder="비밀번호를 입력하시오.">
+    <input type="submit" value="탈퇴">
+</form>
+{% endblock %}

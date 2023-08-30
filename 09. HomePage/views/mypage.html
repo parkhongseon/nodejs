@@ -1,0 +1,91 @@
+<section id="mypage">
+    <div class="inner">
+        <section>
+            <h1>마이페이지 </h1>
+            <button onclick="updateMyPage()">수정</button>
+            <button onclick="completeUpdate()">저장</button>
+
+
+            <hr />
+            <div class="contact-method">
+                <span class="icon solid alt fa-envelope"></span>
+                <h3>ID</h3>
+                <span id="idInput" class="inputChange">{{obj.id}}</span>
+            </div>
+            <div class="contact-method">
+                <span class="icon solid alt fa-phone"></span>
+                <h3>이름</h3>
+                <span id="nameInput" class="inputChange">{{obj.u_name}}</span>
+            </div>
+            <div class="contact-method">
+                <span class="icon solid alt fa-home"></span>
+                <h3>Address</h3>
+                <span id="addInput" class="inputChange">{{obj.address}}</span>
+            </div>
+        </section>
+</section>
+
+<script>
+    const updateMyPage = () => {
+        let inputList = document.getElementsByClassName('inputChange')
+        for (let i = 1; i < inputList.length; i++) {
+            console.log('update', inputList[i].innerText)
+            inputList[i].innerHTML = `<input type='text' class="inputClass" value="${inputList[i].innerText}" oninput="changeData()"></input>`
+        }
+    }
+
+    let changedName = ""
+    let changedAdd = ""
+
+    const changeData = () => {
+        changedName = document.getElementsByClassName('inputClass')[0].value
+        changedAdd = document.getElementsByClassName('inputClass')[1].value
+    }
+
+    const completeUpdate = () => {
+        console.log(changedName, changedAdd)
+
+        // Mission! 변경된 데이터를 Back-end로 전송해서 DB/Session 값 변경
+        /*Fetch문법
+            fetch(ur, {
+                method : "POST",
+                headers : {
+                    "Content-Type" : "application/json"
+                },
+                body : JSON.stringify({
+                    id : "123",
+                    pw : "1234"
+                })
+            })
+                .then(res => res.json())
+                .then(res = > console.log(res))
+                */
+
+                let url = "http://localhost:3333/user/modify"
+                fetch(url, {
+                    method : "POST",
+                    headers : {
+                        "Content-Type" : "application/json"
+                    },
+                    body : JSON.stringify({
+                        name : changedName,
+                        address : changedAdd
+                    })
+                })
+                 .then(res => res.json())
+                 .then(res => {
+                    console.log(res)
+
+                    if (res.msg == "success"){
+                        alert('변경 성공!')
+                        location.href="http://localhost:3333"
+                    } else {
+                        alert('변경실패!')
+                    }
+                    location.href="http://localhost;3333"
+                })
+    }
+
+
+
+</script>

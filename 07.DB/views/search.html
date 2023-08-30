@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h3>회원검색</h3>
+<form method="get" action="/user/select">
+    <input type="text" placeholder="id를 입력하시오." name="id">
+    <input type="submit">
+</form>
+{% endblock %}

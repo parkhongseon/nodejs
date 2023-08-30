@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- form태그를 이용해서 html파일에서 서버로 값을 보냄
+    조건1) 어디로 action (서버주소), 어떻게 method(get/post)
+            보낼지 기재
+    조건2) input태그에는 name속성이 필요하다
+            컴퓨터가 각 값을 구분해야하기 때문에
+    조건3) 서버페이지로 값을 제출해주는 submit type이 필요하다.    
+-->
+    <form  action="http://localhost:3333/">
+        <input type="text" name="id"/>
+        <input type="password" nmae="pw"/>
+        <input type="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+    <table border= "1px soild black ">
+        <tr style="background-color: lightblue">
+            <th>아이디</th>
+            <th>닉네임</th>
+        </tr>
+
+        {%for i in list%}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.nick}}</td>
+        </tr>
+        {%endfor%}
+
+    </table>
+
+{%endblock%}
